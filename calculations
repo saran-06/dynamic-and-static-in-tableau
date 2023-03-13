@@ -1,0 +1,8 @@
+latest 3 month sales:
+    DATEDIFF('month',DATETRUNC('month',[Order Date]),
+    {MAX(DATETRUNC('month',[Order Date]))})<=2
+Dynamic view of set of 10 sales(using parameters):
+    IF [set_of_10]==10 THEN INDEX()>=1 and INDEX()<=10 
+    ELSEIF  [set_of_10]==20 THEN INDEX()>=11 and INDEX()<=20 
+    ELSEIF  [set_of_10]==30 THEN INDEX()>=21 and INDEX()<=30 
+    ELSEIF  [set_of_10]==40 THEN INDEX()>=31 and INDEX()<=40 END
